@@ -9,14 +9,8 @@
   gather_facts: yes
   vars:
     active_list: []
-    provider:
-      user: '{{ ansible_env.ANSIBLE_NET_USERNAME }}'
-      password: '{{ ansible_env.ANSIBLE_NET_PASSWORD }}'
-      server: '{{ f5_server_ip }}'
-      validate_certs: no
-      server_port: 443
- tasks:
 
+ tasks:
 
 # required: ensure only one entity is part of problem otherwise fail
   - name: check impacted entities object length
