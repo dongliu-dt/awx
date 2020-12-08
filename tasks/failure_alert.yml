@@ -1,0 +1,5 @@
+# set playbook failure
+
+- name: playbook execution failed
+  fail:
+    msg: Remediation failed.
