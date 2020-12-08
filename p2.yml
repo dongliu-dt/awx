@@ -1,0 +1,17 @@
+# task queries the dynatrance api
+# retrieves the hostname where the process instance is running on
+#
+# execution returns: dt_process_hostname = hostname where the process instance is running on
+
+  - name: 'main: get process hostname: dt get host info'
+    uri:
+      url: "https://{{ dynatrace_environment_url }}{{ dt_infrastructure_api }}time"
+      method: GET
+      return_content: yes
+      headers:
+        Content-Type: "application/json"
+        Authorization: "Api-token {{ dynatrace_api_token }}"
+      body_format: json
+    register: dthostresponse
+    delegate_to: localhost
+
